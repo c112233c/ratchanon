@@ -19,7 +19,7 @@ if (!is_null($events['events'])) {
 			//
 			$test = filter_var($text, FILTER_SANITIZE_NUMBER_INT)
 			if($test!=null){
-				$a = explode(" ",$str);
+				$a = explode(" ",$text);
 				if($a[1]=='+'){
 					$text = $a[0]+$a[2];
 				}
