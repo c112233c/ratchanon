@@ -17,8 +17,8 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 			
 			//
-			if(filter_var($text, FILTER_SANITIZE_NUMBER_INT)!=null){
-				$int = filter_var($str, FILTER_SANITIZE_NUMBER_INT);
+			$test = filter_var($text, FILTER_SANITIZE_NUMBER_INT)
+			if($test!=null){
 				$a = explode(" ",$str);
 				if($a[1]=='+'){
 					$text = $a[0]+$a[2];
