@@ -2,6 +2,6 @@
 $str = '1 + 1';
 $int = filter_var($str, FILTER_SANITIZE_NUMBER_INT);
 				$a = expolde(" ",$text);
-				$text = $a[0]$a[1]$a[3];
+				$text = $a[0]+$a[3];
 echo $text;
 
