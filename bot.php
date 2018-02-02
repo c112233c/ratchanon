@@ -18,8 +18,20 @@ if (!is_null($events['events'])) {
 			
 			//
 			if(filter_var($text, FILTER_SANITIZE_NUMBER_INT)!=null){
-				$a = expolde(" ",$text);
-				$text = $a[0]$a[1]$a[3];
+				$int = filter_var($str, FILTER_SANITIZE_NUMBER_INT);
+				$a = explode(" ",$str);
+				if($a[1]=='+'){
+					$text = $a[0]+$a[2];
+				}
+				else if($a[1]=='-'){
+					$text = $a[0]-$a[2];
+				}
+				else if($a[1]=='*'){
+					$text = $a[0]*$a[2];
+				}
+				else if($a[1]=='/'){
+					$text = $a[0]/$a[2];
+				}
 			}
 
 			// Build message to reply back
