@@ -15,6 +15,12 @@ if (!is_null($events['events'])) {
 			$text = $event['message']['text'];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
+			
+			//
+			if(filter_var($text, FILTER_SANITIZE_NUMBER_INT)!=null){
+				$a = expolde(" ",$text);
+				$text = $a[0]$a[1]$a[3];
+			}
 
 			// Build message to reply back
 			$messages = [
