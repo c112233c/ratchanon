@@ -1,4 +1,9 @@
 <?
+	{
+  "require": {
+    "php": "^5.6.33"
+  }
+}
       $objConnect = mysql_connect("db4free.net:3307","c112233v","C112233v");
 			if($objConnect)
 			{
