@@ -17,11 +17,12 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 			
 			
-			if($text == "test"){
+			//if($text == "test"){
 			$con = @mysqli_connect('db4free.net:3307', 'c112233v', 'C112233v', 'linenavy');
 			if (!$con) {
 			   // echo "Error: " . mysqli_connect_error();
-				exit();
+				$text = "error";
+				//exit();
 			}
 			
 			// Some Query
@@ -29,11 +30,11 @@ if (!is_null($events['events'])) {
 			$query 	= mysqli_query($con, $sql);
 			while ($row = mysqli_fetch_array($query))
 			{
-				$text = $row['Name']."  ".$row['SName]."\n";
+				$text = $text." ".$row['Name']."  ".$row['SName]." ";
 			}
 			
 			mysqli_close ($con);
-			}
+			//}
 
 			
 			//
