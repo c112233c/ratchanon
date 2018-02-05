@@ -19,22 +19,22 @@ if (!is_null($events['events'])) {
 			
 			//if($text == "test"){
 			$con = @mysqli_connect('db4free.net:3307', 'c112233v', 'C112233v', 'linenavy');
-			if ($con) {
+			if (!$con) {
 			   // echo "Error: " . mysqli_connect_error();
 				$text = "error";
 				//exit();
 			}
-			
+			else{
 			// Some Query
-			/*$sql 	= 'SELECT * FROM test';
+			$sql 	= 'SELECT * FROM test';
 			$query 	= mysqli_query($con, $sql);
 			while ($row = mysqli_fetch_array($query))
 			{
-				$text = $text." ".$row['Name']."  ".$row['SName]." ";
-			}*/
+				$text = $text." ".$row['Name']."  ";
+			}
+			}
 			
 			mysqli_close ($con);
-			//}
 
 			
 			//
