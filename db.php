@@ -5,4 +5,16 @@ if (!$con) {
     echo "Error: " . mysqli_connect_error();
 	exit();
 }
+
+// Some Query
+$sql 	= 'SELECT * FROM test';
+$query 	= mysqli_query($con, $sql);
+while ($row = mysqli_fetch_array($query))
+{
+	echo $row['Name'];
+}
+
+
 echo 'Connected to MySQL';
+
+mysqli_close ($con);
