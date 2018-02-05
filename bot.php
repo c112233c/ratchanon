@@ -16,18 +16,24 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 			
-		
-			$objConnect = mysql_connect("85.10.205.173:3307","c112233v","C112233v");
-			if($objConnect)
-			{
-				$text = "Database Connected.";
+			
+			if($text == "test"){
+			$con = @mysqli_connect('db4free.net:3307', 'c112233v', 'C112233v', 'linenavy');
+			if (!$con) {
+			   // echo "Error: " . mysqli_connect_error();
+				exit();
 			}
-			else
+			
+			// Some Query
+			$sql 	= 'SELECT * FROM test';
+			$query 	= mysqli_query($con, $sql);
+			while ($row = mysqli_fetch_array($query))
 			{
-				$text = "Database Connect Failed.";
+				$text = $row['Name']."  ".$row['SName]."\n";
 			}
-
-			mysql_close($objConnect);
+			
+			mysqli_close ($con);
+			}
 
 			
 			//
