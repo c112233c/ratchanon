@@ -1,5 +1,5 @@
 <?
-$con = @mysqli_connect('db4free.net:3307', 'c112233v', 'C112233v', 'linenavy');
+$con = @new mysqli_connect('db4free.net:3307', 'c112233v', 'C112233v', 'linenavy');
 
 if (!$con) {
     echo "Error: " . mysqli_connect_error();
@@ -11,10 +11,10 @@ $sql 	= 'SELECT * FROM test';
 $query 	= mysqli_query($con, $sql);
 while ($row = mysqli_fetch_array($query))
 {
-	echo $row['Name'];
+	$text = $row['Name'];
 }
 
-
+echo $text;
 echo 'Connected to MySQL';
 
 mysqli_close ($con);
