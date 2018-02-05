@@ -1,5 +1,5 @@
 <?
-$con = @new mysqli_connect('db4free.net:3307', 'c112233v', 'C112233v', 'linenavy');
+$con = @mysqli_connect('db4free.net:3307', 'c112233v', 'C112233v', 'linenavy');
 
 if (!$con) {
     echo "Error: " . mysqli_connect_error();
