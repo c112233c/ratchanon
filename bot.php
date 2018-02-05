@@ -17,7 +17,7 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 			
 		
-			$objConnect = mysql_connect("db4free.net:3307","c112233v","C112233v");
+			$objConnect = mysql_connect("85.10.205.173:3307","c112233v","C112233v");
 			if($objConnect)
 			{
 				$text = "Database Connected.";
