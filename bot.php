@@ -17,8 +17,8 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 			
 			//
-			/*$test = filter_var($text, FILTER_SANITIZE_NUMBER_INT)
-			if($test!=null){
+			$test = filter_var($text, FILTER_SANITIZE_NUMBER_INT)
+			/*if($test!=null){
 				$a = explode(" ",$text);
 				if($a[1]=='+'){
 					$text = $a[0]+$a[2];
@@ -32,8 +32,8 @@ if (!is_null($events['events'])) {
 				else if($a[1]=='/'){
 					$text = $a[0]/$a[2];
 				}
-			}
-*/
+			}*/
+
 			// Build message to reply back
 			$messages = [
 				'type' => 'text',
