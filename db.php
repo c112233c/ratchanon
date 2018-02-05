@@ -1,17 +1,8 @@
 <?
-	{
-  "require": {
-    "php": "^5.6.33"
-  }
+$con = @mysqli_connect('db4free.net:3307', 'c112233v', 'C112233v', 'linenavy');
+
+if (!$con) {
+    echo "Error: " . mysqli_connect_error();
+	exit();
 }
-      $objConnect = mysql_connect("db4free.net:3307","c112233v","C112233v");
-			if($objConnect)
-			{
-				echo "Database Connected.";
-			}
-			else
-			{
-				echo "Database Connect Failed.";
-			}
-			mysql_close($objConnect);
-?>
+echo 'Connected to MySQL';
