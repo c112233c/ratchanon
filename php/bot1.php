@@ -1,25 +1,35 @@
 <?php
+$access_token = '50lIQBfp4lMHXijFOx4+AiCk1ZXAiu7GC6lZaBjsxaP2v8TQjt3WERrDzy4uOedRmNtxt+8nuT8oyV28keCfzYd9BzY25+7wamtalC5xFzxwQeFfB0QIblC6FBSYFFRPjTBZAO8a42/efYM+v/VP/AdB04t89/1O/w1cDnyilFU=';
 
-// example: https://github.com/onlinetuts/line-bot-api/blob/master/php/example/chapter-01.php
+// Validate parsed JSON data
+			
+			$text = "sssss";
+			$user = 'Udc14115eb6c67983f1c7876c3007933a';
 
-include ('line-bot.php');
-
-$channelSecret = 'c2c62e7d395681a2eae042937aded03f';
-$access_token  = '50lIQBfp4lMHXijFOx4+AiCk1ZXAiu7GC6lZaBjsxaP2v8TQjt3WERrDzy4uOedRmNtxt+8nuT8oyV28keCfzYd9BzY25+7wamtalC5xFzxwQeFfB0QIblC6FBSYFFRPjTBZAO8a42/efYM+v/VP/AdB04t89/1O/w1cDnyilFU=';
-
-$bot = new BOT_API($channelSecret, $access_token);
-	
-if (!empty($bot->isEvents)) {
-		
-	$bot->replyMessageNew($bot->replyToken, json_encode($bot->message));
-
-	if ($bot->isSuccess()) {
-		echo 'Succeeded!';
-		exit();
+			// Build message to reply back
+			$messages = [
+				'type' => 'text',
+				'text' => $text
+			];
+			// Make a POST Request to Messaging API to reply to sender
+			$url = 'https://api.line.me/v2/bot/message/reply';
+			$data = [
+				'to'  => $user,
+				'replyToken' => $replyToken,
+				'messages' => [$messages],
+			];
+			$post = json_encode($data);
+			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+			$ch = curl_init($url);
+			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+			curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+			$result = curl_exec($ch);
+			curl_close($ch);
+			echo $result . "\r\n";
+		}
 	}
-
-	// Failed
-	echo $bot->response->getHTTPStatus . ' ' . $bot->response->getRawBody(); 
-	exit();
-
 }
+echo "OK";
