@@ -11,12 +11,49 @@ if (!is_null($events['events'])) {
 		// Reply only when message sent is in 'text' format
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			// Get text sent
-			$text = $event['source']['groupId'];
+			$text = $event['message']['text'];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 			
 			
+			if($text == "test"){
+			$con = @mysqli_connect('db4free.net:3307', 'c112233v', 'C112233v', 'linenavy');
+			if (!$con) {
+			   // echo "Error: " . mysqli_connect_error();
+				$text = "error";
+				//exit();
+			}
+			else{
+			// Some Query
+			$sql 	= 'SELECT * FROM test';
+			$query 	= mysqli_query($con, $sql);
+			while ($row = mysqli_fetch_array($query))
+			{
+				$text = $text." ".$row['Name']."  ";
+			}
+			}
 			
+			mysqli_close ($con);
+			}
+			
+			//
+			/*$test = filter_var($text, FILTER_SANITIZE_NUMBER_INT);
+			if($test!=null){
+				$a = explode(" ",$text);
+				if($a[1]=='+'){
+					$text = $a[0]+$a[2];
+				}
+				else if($a[1]=='-'){
+					$text = $a[0]-$a[2];
+				}
+				else if($a[1]=='*'){
+					$text = $a[0]*$a[2];
+				}
+				else if($a[1]=='/'){
+					$text = $a[0]/$a[2];
+				}
+			}*/
+			// Build message to reply back
 			$messages = [
 				'type' => 'text',
 				'text' => $text
