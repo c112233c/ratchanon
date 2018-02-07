@@ -35,9 +35,8 @@ if (!is_null($events['events'])) {
 					where CHECKTIME like '2018-02-06%'
 					GROUP BY Type';
 			$query 	= mysqli_query($con, $sql);
-			$row = mysqli_fetch_array($query);
 			
-				$text = $text." จำนวนนักเรียนที่มาสาย ".$row['usercount']."  ".$row['Type'];
+				$text = $text." จำนวนนักเรียนที่มาสาย ".$query['Type']['Present']."  ";
 			
 			}
 			
