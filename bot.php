@@ -16,6 +16,8 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 			
 			
+			//$day = date("Y-m-d");
+
 			if($text == "test"){
 			$con = @mysqli_connect('db4free.net:3307', 'c112233v', 'C112233v', 'linenavy');
 			if (!$con) {
@@ -32,12 +34,13 @@ if (!is_null($events['events'])) {
                                         ELSE '8' END) as Type
                                         ,count(USERID) as usercount
                                         FROM CHECKINOUT
-					where CHECKTIME like '2018-02-06%'
-					GROUP BY Type';
+																				where CHECKTIME like '2018-02-06%'
+																				GROUP BY Type';
 			$query 	= mysqli_query($con, $sql);
-			
-				$text = $text." จำนวนนักเรียนที่มาสาย ".$query['Type']['Present']."  ";
-			
+			while ($row = mysqli_fetch_array($query))
+			{
+				$text = $text." ".$row['Type']."  ";
+			}
 			}
 			
 			mysqli_close ($con);
