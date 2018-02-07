@@ -25,12 +25,20 @@ if (!is_null($events['events'])) {
 			}
 			else{
 			// Some Query
-			$sql 	= 'SELECT * FROM test';
+			$sql 	= 'SELECT (
+	                                CASE 
+                                        WHEN CHECKTIME BETWEEN ('2018-02-06 08:00:00') and ('2018-02-06 08:30:00') then 'Present'
+                                        WHEN CHECKTIME BETWEEN ('2018-02-06 08:30:00') and ('2018-02-06 09:30:00') then 'Late'
+                                        ELSE '8' END) as Type
+                                        ,count(USERID) as usercount
+                                        FROM CHECKINOUT
+					where CHECKTIME like '2018-02-06%'
+					GROUP BY Type';
 			$query 	= mysqli_query($con, $sql);
-			while ($row = mysqli_fetch_array($query))
-			{
-				$text = $text." ".$row['Name']."  ";
-			}
+			$row = mysqli_fetch_array($query)
+			
+				$text = $text." จำนวนนักเรียนที่มาสาย ".$row['usercount']."  ".$row['Type'];
+			
 			}
 			
 			mysqli_close ($con);
