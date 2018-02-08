@@ -7,7 +7,7 @@ if (!$con) {
 }
 
 // Some Query
-$sql 	= 'SELECT (CASE WHEN CHECKTIME BETWEEN ('2018-02-06 08:00:00') and ('2018-02-06 08:30:00') then 'Present' WHEN CHECKTIME BETWEEN ('2018-02-06 08:30:00') and ('2018-02-06 09:30:00') then 'Late' ELSE '8' END) as Type,count(USERID) as usercount FROM CHECKINOUT WHERE USERID ="97" GROUP BY Type';
+$sql 	= 'SELECT * FROM CHECKINOUT  GROUP BY USERID';
 			$query 	= mysqli_query($con, $sql);
 
 			$row = mysqli_fetch_array($query);
