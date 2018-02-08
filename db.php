@@ -7,19 +7,13 @@ if (!$con) {
 }
 
 // Some Query
-$sql 	= 'SELECT (
-		CASE 
-		WHEN CHECKTIME BETWEEN ('2018-02-06 08:00:00') and ('2018-02-06 08:30:00') then 'Present'
-		WHEN CHECKTIME BETWEEN ('2018-02-06 08:30:00') and ('2018-02-06 09:30:00') then 'Late'
-		ELSE '8' END) as Type
-		,count(USERID) as usercount
-		FROM CHECKINOUT
-		where CHECKTIME like '2018-02-06%'
-		group by Type';
+$sql 	= 'SELECT *
+	FROM CHECKINOUT
+	where CHECKTIME like '2018-02-06%'';
 $query 	= mysqli_query($con, $sql);
 while ($row = mysqli_fetch_array($query))
 {
-	$text = $row['Name'];
+	$text = $row['sn'];
 }
 
 echo $text;
