@@ -11,7 +11,7 @@ $sql 	= 'SELECT * FROM test';
 			$query 	= mysqli_query($con, $sql);
 			$row = mysqli_fetch_array($query);
 			
-				$text = $row[0];
+				$text = $row[0][1];
 			
 echo $text;
 //echo $text;
