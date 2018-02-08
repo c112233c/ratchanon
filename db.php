@@ -11,7 +11,7 @@ $sql 	= 'SELECT * FROM CHECKINOUT WHERE USERID LIKE "%9%"';
 $query 	= mysqli_query($con, $sql);
 while ($row = mysqli_fetch_array($query))
 {
-	$text = $row['USERID'];
+	$text = $query;
 }
 
 echo $text;
