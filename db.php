@@ -7,8 +7,8 @@ if (!$con) {
 }
 
 // Some Query
-$test = "CASE WHEN USERID = "97" THEN "a" END AS Type";
-$sql 	= "SELECT ".$test." FROM CHECKINOUT  GROUP BY Type";
+$test = "USERID";
+$sql 	= "SELECT ".$test." FROM CHECKINOUT ";
 			$query 	= mysqli_query($con, $sql);
 
 			$row = mysqli_fetch_array($query);
