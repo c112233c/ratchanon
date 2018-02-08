@@ -11,7 +11,7 @@ $sql 	= 'SELECT * FROM test';
 			$query 	= mysqli_query($con, $sql);
 			while ($row = mysqli_fetch_array($query))
 			{
-				$text = json_decode($row);
+				$text = json_encode($row);
 			}
 echo $text;
 //echo $text;
