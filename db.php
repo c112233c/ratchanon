@@ -7,7 +7,7 @@ if (!$con) {
 }
 
 // Some Query
-$test = "USERID";
+$test = "CASE WHEN 1 THEN "2"";
 $sql 	= "SELECT ".$test." FROM CHECKINOUT ";
 			$query 	= mysqli_query($con, $sql);
 
