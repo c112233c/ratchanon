@@ -7,8 +7,8 @@ if (!$con) {
 }
 
 // Some Query
-$test = "USERID, count(USERID)";
-$sql 	= 'SELECT '.$test.' FROM CHECKINOUT  GROUP BY USERID';
+$test = "USERID, COUNT(USERID)";
+$sql 	= "SELECT ".$test." FROM CHECKINOUT  GROUP BY USERID";
 			$query 	= mysqli_query($con, $sql);
 
 			$row = mysqli_fetch_array($query);
