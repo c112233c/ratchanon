@@ -12,6 +12,7 @@ $sql 	= 'SELECT * FROM test';
 
 			$row = mysqli_fetch_array($query);
 			$text = $row[1];
+echo $text;
 			$row = mysqli_fetch_array($query);
 			$text = $row[1];
 			
