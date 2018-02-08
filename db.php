@@ -9,9 +9,9 @@ if (!$con) {
 // Some Query
 $sql 	= 'SELECT * FROM CHECKINOUT WHERE USERID LIKE "%9%"';
 $query 	= mysqli_query($con, $sql);
-$row = mysqli_fetch_array($query)
+$row = mysqli_fetch_array($query);
 
-echo $row
+echo $row;
 //echo $text;
 echo 'Connected to MySQL';
 
