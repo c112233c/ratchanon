@@ -7,7 +7,7 @@ if (!$con) {
 }
 
 // Some Query
-$sql 	= 'SELECT * FROM test';
+$sql 	= 'SELECT * FROM CHECKINOUT WHERE USERID ="97"';
 			$query 	= mysqli_query($con, $sql);
 
 			$row = mysqli_fetch_array($query);
