@@ -11,7 +11,7 @@ $sql 	= 'SELECT * FROM CHECKINOUT WHERE USERID = "97"';
 $query 	= mysqli_query($con, $sql);
 while ($row = mysqli_fetch_array($query))
 {
-	$text = $row['sn'];
+	$text = $row['USERID'];
 }
 
 echo $text;
