@@ -7,7 +7,8 @@ if (!$con) {
 }
 
 // Some Query
-$sql 	= 'SELECT USERID, COUNT(USERID) FROM CHECKINOUT  GROUP BY USERID';
+$test = "( CASE WHEN USERID = "97" then 'Present' WHEN USERID = "98" then 'Late' ELSE '8' END) as Type , COUNT(USERID) as usercount";
+$sql 	= 'SELECT '.$test.' FROM CHECKINOUT  GROUP BY USERID';
 			$query 	= mysqli_query($con, $sql);
 
 			$row = mysqli_fetch_array($query);
