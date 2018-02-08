@@ -7,9 +7,7 @@ if (!$con) {
 }
 
 // Some Query
-$sql 	= 'SELECT *
-	FROM CHECKINOUT
-	where CHECKTIME like '2018-02-06%'';
+$sql 	= 'SELECT * FROM CHECKINOUT';
 $query 	= mysqli_query($con, $sql);
 while ($row = mysqli_fetch_array($query))
 {
