@@ -11,7 +11,7 @@ $sql 	= 'SELECT * FROM CHECKINOUT WHERE CHECKTIME LIKE '2018%'';
 $query 	= mysqli_query($con, $sql);
 while ($row = mysqli_fetch_array($query))
 {
-	$text = $row['USERID'];
+	$text = $row['CHECKTIME'];
 }
 
 echo $text;
