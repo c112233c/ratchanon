@@ -11,10 +11,10 @@ $sql 	= 'SELECT * FROM CHECKINOUT  GROUP BY USERID';
 			$query 	= mysqli_query($con, $sql);
 
 			$row = mysqli_fetch_array($query);
-			$text = $row[1];
+			$text = $row[0];
 echo $text;
 			$row = mysqli_fetch_array($query);
-			$text = $row[1];
+			$text = $row[0];
 			
 			
 echo $text;
