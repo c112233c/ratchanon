@@ -7,11 +7,12 @@ if (!$con) {
 }
 
 // Some Query
-$sql 	= 'SELECT * FROM CHECKINOUT ';
-$query 	= mysqli_query($con, $sql);
-$row = mysqli_fetch_array($query);
-
-echo $query;
+$sql 	= 'SELECT * FROM test';
+			$query 	= mysqli_query($con, $sql);
+			while ($row = mysqli_fetch_array($query))
+			{
+				$text = $text." ".$row['Name']."  ";
+			}
 echo $row;
 //echo $text;
 echo 'Connected to MySQL';
