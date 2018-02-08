@@ -8,7 +8,7 @@ if (!$con) {
 
 // Some Query
 $test = "CASE WHEN 1 THEN "2" END ";
-$sql 	= "SELECT ".$test." FROM CHECKINOUT ";
+$sql 	= "SELECT CASE WHEN 1 THEN "2" END FROM CHECKINOUT ";
 			$query 	= mysqli_query($con, $sql);
 
 			$row = mysqli_fetch_array($query);
