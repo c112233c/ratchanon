@@ -13,7 +13,7 @@ $sql 	= 'SELECT * FROM test';
 			{
 				$text = json_decode($row);
 			}
-echo $row;
+echo $text;
 //echo $text;
 echo 'Connected to MySQL';
 
