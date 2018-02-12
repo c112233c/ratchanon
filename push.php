@@ -26,7 +26,8 @@ mysqli_close ($con);
 $sum = 32-$present-$late;
 
 //Build Text
-$text = "ยอดเข้าเรียนของนักเรียนหลักสูตรอาชีพเพื่อเลื่อนฐานะชั้นจ่าเอก มาเรียน ".$present." นาย มาสาย ".$late." นาย ขาด ".$sum." นาย";
+$datetext = date("j/m/Y");
+$text = "ยอดเข้าเรียนของนักเรียนหลักสูตรอาชีพเพื่อเลื่อนฐานะชั้นจ่าเอกประจำวันที่ ".$datetext." มาเรียน ".$present." นาย มาสาย ".$late." นาย ขาด ".$sum." นาย";
 			// Build message to reply back
 			$messages = [
 				'type' => 'text',
