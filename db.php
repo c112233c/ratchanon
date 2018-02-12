@@ -9,7 +9,7 @@ if (!$con) {
 // Some Query
 $test = "CASE WHEN 1 THEN "2" END ";
 $sql 	= "SELECT * FROM CHECKINOUT ";
-			$query 	= $con->query($con, $sql);
+			$query 	= $con->query($sql);
 
 			$row = mysqli_fetch_array($query);
 			$text = $row[0];
