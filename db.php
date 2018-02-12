@@ -7,7 +7,6 @@ if (!$con) {
 }
 
 // Some Query
-$test = "CASE WHEN 1 THEN "2" END ";
 $sql 	= "SELECT * FROM test ";
 			$query 	= mysqli_query($con, $sql);
 
