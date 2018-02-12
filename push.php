@@ -27,7 +27,7 @@ $sum = 32-$present-$late;
 
 //Build Text
 $datetext = date("j/m/Y");
-$text = "ยอดเข้าเรียนของนักเรียนหลักสูตรอาชีพเพื่อเลื่อนฐานะชั้นจ่าเอกประจำวันที่ ".$datetext." มาเรียน ".$present." นาย มาสาย ".$late." นาย ขาด ".$sum." นาย";
+$text = "ยอดเข้าเรียนของนักเรียนหลักสูตรอาชีพเพื่อเลื่อนฐานะชั้นจ่าเอกประจำวันที่ ".$datetext." \nมาเรียน ".$present." นาย \nมาสาย ".$late." นาย \nขาด ".$sum." นาย";
 			// Build message to reply back
 			$messages = [
 				'type' => 'text',
