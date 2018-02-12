@@ -8,7 +8,7 @@ if (!$con) {
 
 // Some Query
 $sql 	= "SELECT ( CASE 
-WHEN CHECKTIME BETWEEN "2018-02-08 08:00:00" AND "2018-02-08 09:00:00" THEN '3'
+WHEN CHECKTIME BETWEEN '2018-02-08 08:00:00' AND '2018-02-08 09:00:00' THEN '3'
 ELSE '8' END) AS Type
 FROM CHECKINOUT ";
 			$query 	= mysqli_query($con, $sql);
