@@ -7,7 +7,10 @@ if (!$con) {
 }
 
 // Some Query
-$sql 	= "SELECT * FROM test ";
+$sql 	= "SELECT ( CASE 
+WHEN 1 THEN '3'
+ELSE '8' END) AS Type
+FROM test ";
 			$query 	= mysqli_query($con, $sql);
 
 			$row = mysqli_fetch_array($query);
