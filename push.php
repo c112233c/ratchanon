@@ -35,4 +35,3 @@ $access_token = '50lIQBfp4lMHXijFOx4+AiCk1ZXAiu7GC6lZaBjsxaP2v8TQjt3WERrDzy4uOed
 }
 echo "OK";
 ?>
-$arrPostData['to'] = "Ccd8f942bc758319015965a2da9cd068a";
